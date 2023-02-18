@@ -30,9 +30,14 @@ header {
   line-height: 20px;
   color: #444444;
   margin-right: 20px;
+  cursor: pointer;
 }
 .header__list-links a:last-child {
   margin-right: 0;
+}
+.header__list-links a:hover {
+  color: #B01736;
+  opacity: 0.75;
 }
 
 .first-screen {
@@ -63,12 +68,16 @@ header {
   padding: 18px 28px 18px 28px;
   margin-left: 70px;
   border: none;
+  cursor: pointer;
 }
 .first-screen .first-screen__title button a {
   font-size: 18px;
   line-height: 20px;
   color: #FFFFFF;
   text-decoration: none;
+}
+.first-screen .first-screen__title button:hover {
+  opacity: 0.75;
 }
 
 .about-company__info-screen {
@@ -142,9 +151,37 @@ header {
   font-size: 18px;
   line-height: 20px;
   color: #444444;
+  cursor: pointer;
 }
 .map-screen__top-menu li:last-child {
   margin-right: 0;
+}
+.map-screen__top-menu li:hover {
+  color: #A30C33;
+  border-bottom: 3px solid #A30C33;
+}
+
+.top-menu__list-container {
+  padding: 30px 69px 30px 69px;
+}
+.top-menu__list-container .list-container__cities {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.top-menu__list-container .list-container__cities .cities__item h1 {
+  font-size: 18px;
+  line-height: 20px;
+  color: #202020;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.top-menu__list-container .list-container__cities .cities__item p {
+  font-size: 18px;
+  line-height: 20px;
+  color: #444444;
+  margin-bottom: 15px;
+  font-weight: 400;
 }
 
 .map-screen__map-container {
@@ -201,48 +238,34 @@ header {
   color: #444444;
   margin-bottom: 55px;
 }
-.about-company__business_cards .business-cards__level {
+.about-company__business_cards .business_cards__wrapper {
   display: flex;
-  width: 100%;
-  justify-content: stretch;
+  margin-top: 20px;
+  justify-content: space-between;
 }
-.about-company__business_cards .business-cards__level .level__left-card {
+.about-company__business_cards .business_cards__wrapper div {
   position: relative;
-  margin-right: 10px;
-  width: 50%;
 }
-.about-company__business_cards .business-cards__level .level__left-card p {
-  background: #2D3653;
-  opacity: 0.6;
-  padding-top: 28px;
+.about-company__business_cards .business_cards__wrapper div .wrapper__image img {
+  width: 100%;
+}
+.about-company__business_cards .business_cards__wrapper div .wrapper__gradient {
+  position: absolute;
+  bottom: 4px;
   padding-bottom: 28px;
+  padding-top: 28px;
   padding-left: 20px;
+  background-color: #2D3653;
+  width: 100%;
+  opacity: 0.75;
+  color: #FFFFFF;
+}
+.about-company__business_cards .business_cards__wrapper div .wrapper__gradient p {
+  background: #2D3653;
+  opacity: 1;
   font-weight: 600;
   font-size: 24px;
   line-height: 110%;
-  color: #FFFFFF;
-}
-.about-company__business_cards .business-cards__level .level__left-card img {
-  width: 100%;
-}
-.about-company__business_cards .business-cards__level .level__right-card {
-  position: relative;
-  margin-left: 10%;
-  width: 50%;
-}
-.about-company__business_cards .business-cards__level .level__right-card p {
-  background: #2D3653;
-  opacity: 0.6;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  padding-left: 20px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 110%;
-  color: #FFFFFF;
-}
-.about-company__business_cards .business-cards__level .level__right-card img {
-  width: 100%;
 }
 
 .about-company__social-info {
@@ -325,13 +348,14 @@ footer .footer__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 50px;
+  align-items: center;
 }
 footer .footer__title h1 {
   font-weight: 600;
   font-size: 56px;
   line-height: 100%;
   color: #444444;
-  margin-bottom: 50px;
 }
 footer .footer__image img {
   width: 100%;
@@ -343,21 +367,54 @@ footer ul {
   padding: 0;
 }
 footer li {
-  background: #000000;
-  opacity: 0.1;
+  background: lightgrey;
   height: 10px;
   list-style: none;
   width: 20%;
   margin-top: 40px;
   margin-right: 10px;
+  cursor: pointer;
+}
+footer li:first-child {
+  background-color: #A30C33;
 }
 footer li:last-child {
   margin-right: 0;
-  background: #A30C33;
-  opacity: 1;
+}
+footer li:hover {
+  opacity: 0.75;
 }
 
 @media all and (max-width: 512px) {
+  .about-company__business_cards {
+    padding: 22px 5px 22px 5px;
+  }
+  .about-company__business_cards h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .about-company__business_cards .business_cards__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .about-company__business_cards .business_cards__wrapper div {
+    position: relative;
+    margin-top: 10px;
+  }
+  .about-company__business_cards .business_cards__wrapper div .wrapper__image img {
+    height: 25%;
+  }
+  .about-company__business_cards .business_cards__wrapper div .wrapper__gradient {
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-company__business_cards .business_cards__wrapper div .wrapper__gradient p {
+    font-size: 20px;
+  }
   header {
     padding-top: 16px;
     padding-left: 5px;
@@ -415,7 +472,6 @@ footer li:last-child {
   }
   .about-company__counter-screen {
     padding: 0px 30px 50px 30px;
-    justify-content: stretch;
   }
   .about-company__counter-screen .counter-screen__item {
     margin-right: 60px;
@@ -460,15 +516,117 @@ footer li:last-child {
     font-size: 18px;
     line-height: 20px;
     color: #444444;
+    cursor: pointer;
   }
   .map-screen__top-menu li:last-child {
     margin-right: 0;
   }
-  .map-screen__map-container {
-    padding: 107px 30px 105px 30px;
+  .map-screen__top-menu li:hover {
+    color: #B01736;
+    opacity: 0.75;
   }
-  .map-screen__map-container img {
+  .map-screen__map-container {
+    padding: 0px;
+  }
+  .list-container__cities {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
+  }
+  .mission-block {
+    padding: 30px 5px 30px 5px;
+  }
+  .mission-block div {
+    position: relative;
+    z-index: 2;
+  }
+  .mission-block div h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .mission-block div p {
+    font-size: 16px;
+  }
+  .mission-block .mission-block__left-pattern {
+    height: 80%;
+  }
+  .mission-block .mission-block__rigth-pattern {
+    height: 80%;
+  }
+  .about-company__social-info {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .about-company__social-info .social-info__wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06);
+  }
+  .about-company__social-info h1 {
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+  .about-company__social-info .social-info__items-list {
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .about-company__social-info .social-info__items-list .items-list__element {
+    margin: 10px 25px 0px 25px;
+  }
+  .about-company__social-info .social-info__items-list .items-list__element p {
+    font-size: 16px;
+  }
+  .about-company__social-info .social-info__items-list .social-info__decoration-line {
+    margin-top: 24px;
+  }
+  .about-company__sales h1 {
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 25px;
+  }
+  .about-company__sales h1 span {
+    font-size: 22px;
+  }
+  .about-company__sales .company__sales__items-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .about-company__sales .company__sales__items-list .items-list__element {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .about-company__sales .company__sales__items-list .items-list__element p {
+    font-size: 16px;
+  }
+  footer {
+    padding: 50px 20px 50px 20px;
+  }
+  footer .footer__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .footer__title div {
+    display: none;
+  }
+  footer .footer__title h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  footer .footer__image img {
+    width: 100%;
+  }
+  footer ul {
+    display: none;
   }
 }
 

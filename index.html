@@ -74,24 +74,80 @@
       <div class="map-screen__top-menu">
         <div>
           <p>Офисы Softline</p>
-          <img src="images/downarrow.svg">
+          <img id="open-list" src="images/downarrow.svg" style="display: block" onclick="showCitiesList()">
+          <img id="close-list" src="images/arrowtop.svg" style="display: none" onclick="сloseCitiesList()">
         </div>
+
         <ul>
-          <li>Все</li>
-          <li>Москва</li>
-          <li>Центр</li>
-          <li>Северо-запад</li>
-          <li>Юг</li>
-          <li>Волга</li>
-          <li>Урал</li>
-          <li>Сибирь</li>
-          <li>Дальний восток</li>
+          <li id="all" value="all" id="map__all-states" onclick="setAllMap()">Все</li>
+          <li id="moscow" value="moscow" id="map__moscow" onclick="setMoscowMap()">Москва</li>
+          <li id="center" value="center" id="map__center" onclick="setCenterMap()">Центр</li>
+          <li id="northWest" value="northWest" id="map__north-west" onclick="setNWMap()">Северо-запад</li>
+          <li id="south" value="south" id="map__south" onclick="setSouthMap()">Юг</li>
+          <li id="volga" value="volga" id="map__volga" onclick="setVolgaMap()">Волга</li>
+          <li id="ural" value="ural" id="map__ural" onclick="setUralMap()">Урал</li>
+          <li id="siberia" value="siberia" id="map__siberia" onclick="setSiberiaMap()">Сибирь</li>
+          <li id="farEast" value="farEast" id="map__far-east" onclick="setFEMap()">Дальний восток</li>
         </ul>
       </div>
 
+      <div id="citiesList" style="display: none" class="top-menu__list-container">
+        <div class="list-container__cities">
+          <div class="cities__item">
+            <h1>Москва</h1>
+          </div>
+          <div class="cities__item">
+            <h1>Центр</h1>
+            <p>Воронеж</p>
+            <p>Ярославль</p>
+            <p>Белгород</p>
+          </div>
+          <div class="cities__item">
+            <h1>Северо-Запад</h1>
+            <p>Санкт-Петербург</p>
+            <p>Калининград</p>
+          </div>
+          <div class="cities__item">
+            <h1>Юг</h1>
+            <p>Ростов-на-Дону</p>
+            <p>Краснодар</p>
+            <p>Волгоград</p>
+          </div>
+          <div class="cities__item">
+            <h1>Волга</h1>
+            <p>Казань</p>
+            <p>Самара</p>
+            <p>Уфа</p>
+            <p>Оренбург</p>
+            <p>Нижний Новгород</p>
+          </div>
+          <div class="cities__item">
+            <h1>Урал</h1>
+            <p>Екатеринбург</p>
+            <p>Челябинск</p>
+            <p>Пермь</p>
+            <p>Сургут</p>
+            <p>Тюмень</p>
+            <p>Ижевск</p>
+          </div>
+          <div class="cities__item">
+            <h1>Сибирь</h1>
+            <p>Новосибирск</p>
+            <p>Омск</p>
+            <p>Томск</p>
+            <p>Красноярск</p>
+            <p>Иркутск</p>
+          </div>
+          <div class="cities__item">
+            <h1>Дальний Восток</h1>
+            <p>Хабаровск</p>
+            <p>Владивосток</p>
+          </div>
+        </div>
+      </div>
 
       <div class="map-screen__map-container">
-        <img src="images/map.svg">
+        <img id="map" src="images/map.svg">
       </div>
     </div>
     <div class="mission-block">
@@ -106,106 +162,132 @@
 
     <div class="about-company__business_cards">
       <h1>Направления бизнеса</h1>
-      <div class="business-cards__level">
-        <div class="level__left-card">
-          <p>Решения Softline</p>
-          <img src="images/toplvl-left.svg">
+      <div class="business_cards__wrapper">
+        <div>
+          <div class="wrapper__image">
+            <img src="images/toplvl-left.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Решения Softline</p>
+          </div>
         </div>
-        <div class="level__right-card">
-          <p>Кибербезопасность</p>
-          <img src="images/toplvl-right.svg">
-        </div>
-      </div>
-      <div class="business-cards__level">
-        <div class="level__left-card">
-          <p>Импортозамещение</p>
-          <img src="images/midlvl-left.svg">
-        </div>
-        <div class="level__right-card">
-          <p>Облачные решения</p>
-          <img src="images/midlvl-right.svg">
+        <div>
+          <div class="wrapper__image">
+            <img src="images/toplvl-right.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Кибербезопасность</p>
+          </div>
         </div>
       </div>
-      <div class="business-cards__level">
-        <div class="level__left-card">
-          <p>Цифровая трансформация
-            и разработка ПО</p>
-          <img src="images/botlvl-left.svg">
+      <div class="business_cards__wrapper">
+        <div>
+          <div class="wrapper__image">
+            <img src="images/midlvl-left.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Импортозамещение</p>
+          </div>
         </div>
-        <div class="level__right-card">
-          <p>Техническая поддержка Softline</p>
-          <img src="images/botlvl-right.svg">
+        <div>
+          <div class="wrapper__image">
+            <img src="images/midlvl-right.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Облачные решения</p>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
+      <div class="business_cards__wrapper">
+        <div>
+          <div class="wrapper__image">
+            <img src="images/botlvl-left.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Цифровая трансформация
+              и разработка ПО</p>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper__image">
+            <img src="images/botlvl-right.svg">
+          </div>
+          <div class="wrapper__gradient">
+            <p>Техническая поддержка Softline</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="about-company__social-info">
-      <div class="social-info__wrapper">
-        <h1>Компенсационный пакет</h1>
-        <div class="social-info__items-list">
-          <div class="items-list__element">
-            <img src="images/med.svg">
-            <p>ДМС</p>
-          </div>
-          <div class="items-list__element">
-            <img src="images/cake.svg">
-            <p>Выходной <br>в день рождения
-            </p>
-          </div>
-          <div class="items-list__element">
-            <img src="images/phone.svg">
-            <p>Корпоративная <br> мобильная связь
-            </p>
-          </div>
-          <div class="items-list__element">
-            <img src="images/gym.svg">
-            <p>Корпоративные скидки <br>на спорт</p>
-          </div>
-          <div class="items-list__element">
-            <img src="images/hands.svg">
-            <p>LTI</p>
-          </div>
-        </div>
-        <div class="social-info__decoration-line"></div>
-        <div class="about-company__sales">
-          <h1>Программа дополнительной мотивации <br><span>доплата 12% от суммы</span></h1>
-          <div class="company__sales__items-list">
-            <div class="items-list__element">
-              <img src="images/scaner.svg">
-              <p>Оргтехники</p>
-            </div>
+
+      <div class="about-company__social-info">
+        <div class="social-info__wrapper">
+          <h1>Компенсационный пакет</h1>
+          <div class="social-info__items-list">
             <div class="items-list__element">
               <img src="images/med.svg">
               <p>ДМС</p>
             </div>
             <div class="items-list__element">
-              <img src="images/house.svg">
-              <p>Ипотеки</p>
+              <img src="images/cake.svg">
+              <p>Выходной <br>в день рождения
+              </p>
+            </div>
+            <div class="items-list__element">
+              <img src="images/phone.svg">
+              <p>Корпоративная <br> мобильная связь
+              </p>
+            </div>
+            <div class="items-list__element">
+              <img src="images/gym.svg">
+              <p>Корпоративные скидки <br>на спорт</p>
+            </div>
+            <div class="items-list__element">
+              <img src="images/hands.svg">
+              <p>LTI</p>
+            </div>
+          </div>
+          <div class="social-info__decoration-line"></div>
+          <div class="about-company__sales">
+            <h1>Программа дополнительной мотивации <br><span>доплата 12% от суммы</span></h1>
+            <div class="company__sales__items-list">
+              <div class="items-list__element">
+                <img src="images/scaner.svg">
+                <p>Оргтехники</p>
+              </div>
+              <div class="items-list__element">
+                <img src="images/med.svg">
+                <p>ДМС</p>
+              </div>
+              <div class="items-list__element">
+                <img src="images/house.svg">
+                <p>Ипотеки</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </main>
 
   <footer>
     <div class="footer__title">
       <h1>Корпоративная жизнь</h1>
       <div>
-        <img src="images/leftslider.svg">
-        <img src="images/rightslider.svg">
+        <img id="footer__prev-slide" onclick="PrevFooterImg()" src="images/leftslider.svg">
+        <img id="footer__next-slide" onclick="NextFooterImg()" src="images/rightslider.svg">
+
       </div>
     </div>
-    <div class="footer__image"><img src="images/slide1.svg"></div>
+    <div class="footer__image"><img id="footer__main-image" src="images/team.svg"></div>
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li id="footer__first-link" onclick="SetImg1()"></li>
+      <li id="footer__second-link" onclick="SetImg2()"></li>
+      <li id="footer__third-link" onclick="SetImg3()"></li>
+      <li id="footer__fourth-link" onclick="SetImg4()"></li>
+      <li id="footer__fifth-link" onclick="SetImg5()"></li>
     </ul>
   </footer>
 
+  <script src="scripts/showFooterImage.js"></script>
+  <script src="scripts/showList.js"></script>
+  <script src="scripts/showMap.js"></script>
 </body>
